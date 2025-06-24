@@ -13,7 +13,7 @@ OQS_KEM *OQS_KEM_ntru_plus_kem768_new(void) {
     kem->method_name = OQS_KEM_alg_ntru_plus_kem768;
     kem->alg_version = "https://github.com/kpqc-cryptocraft/KpqClean_ver2/commit/80c525aa74d3b8983b16a124aa35dc61e50f43b7";
 
-    kem->claimed_nist_level = 2.5;
+    kem->claimed_nist_level = 3;
 
 
     kem->length_public_key = OQS_KEM_ntru_plus_kem768_length_public_key;
