@@ -23,10 +23,6 @@ OQS_KEM *OQS_KEM_smaug_t3_new(void) {
     kem->length_shared_secret = OQS_KEM_smaug_t3_length_shared_secret;
     kem->length_keypair_seed = OQS_KEM_smaug_t3_length_keypair_seed;
 
-    printf("[SMAUG-T3] pk: %zu, sk: %zu, ct: %zu, ss: %zu\n",
-        kem->length_public_key, kem->length_secret_key,
-        kem->length_ciphertext, kem->length_shared_secret); 
-
     kem->keypair = OQS_KEM_smaug_t3_keypair;
     kem->keypair_derand = OQS_KEM_smaug_t3_keypair_derand;
     kem->encaps = OQS_KEM_smaug_t3_encaps;
