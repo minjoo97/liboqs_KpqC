@@ -53,4 +53,4 @@ OQS_API OQS_STATUS OQS_KEM_ntru_plus_kem768_decaps(uint8_t *shared_secret, const
 }
 
 
-#endif 
+#endif
