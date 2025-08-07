@@ -177,12 +177,17 @@ extern "C" {
 /** Algorithm identifier for HAETAE-5 */
 #define OQS_SIG_alg_haetae_5 "HAETAE-5"
 
-// AIMer 알고리즘 식별자
+/** Algorithm identifier for AIMER-128s */
 #define OQS_SIG_alg_aimer_128s "AIMER-128s"
+/** Algorithm identifier for AIMER-128f */
 #define OQS_SIG_alg_aimer_128f "AIMER-128f"
+/** Algorithm identifier for AIMER-192s */
 #define OQS_SIG_alg_aimer_192s "AIMER-192s"
+/** Algorithm identifier for AIMER-192f */
 #define OQS_SIG_alg_aimer_192f "AIMER-192f"
+/** Algorithm identifier for AIMER-256s */
 #define OQS_SIG_alg_aimer_256s "AIMER-256s"
+/** Algorithm identifier for AIMER-256f */
 #define OQS_SIG_alg_aimer_256f "AIMER-256f"
 ///// OQS_COPY_FROM_UPSTREAM_FRAGMENT_ALG_IDENTIFIER_END
 // EDIT-WHEN-ADDING-SIG
@@ -453,7 +458,7 @@ OQS_API void OQS_SIG_free(OQS_SIG *sig);
 #ifdef OQS_ENABLE_SIG_HAETAE
 #include <oqs/sig_haetae.h>
 #endif /* OQS_ENABLE_SIG_HAETAE */
-// AIMer 지원
+/** Support for AIMER signature schemes */
 #ifdef OQS_ENABLE_SIG_AIMER
 #include <oqs/sig_aimer.h>
 #endif /* OQS_ENABLE_SIG_AIMER */
