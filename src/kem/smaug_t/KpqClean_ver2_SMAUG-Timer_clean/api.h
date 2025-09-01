@@ -20,7 +20,7 @@
 #define TiMER_SECRETKEYBYTES 160 + 672
 #define TiMER_PUBLICKEYBYTES 672
 #define TiMER_CIPHERTEXTBYTES 608
-#define TiMER_BYTES 16
+#define TiMER_BYTES 32
 
 int crypto_kem_keypair(uint8_t *pk, uint8_t *sk);
 int crypto_kem_enc(uint8_t *ct, uint8_t *ss, const uint8_t *pk);
