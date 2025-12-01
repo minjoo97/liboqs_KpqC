@@ -49,12 +49,12 @@ This library supports all algorithms from upstream `liboqs`, with the addition o
 ### Security & Usage
 - For **research and prototyping only**.
 - **Not recommended** for production environments or for protecting sensitive data.
-- We strongly recommend **hybrid cryptography** (combining PQC + classical algorithms such as RSA or ECDH).
+- We strongly recommend **hybrid cryptography** (combining PQC + classical algorithms suchs as RSA or ECDH).
 
 > **🚧 Note on KpqC AVX2 Implementations**
 >
 > AVX2-optimized versions of the KpqC algorithms are currently **Work In Progress (WIP)**.
-> Implementation is ongoing, and they are **not yet available for use**. 
+> Implementation is ongoing, and they are **not yet available for use**.
 > Please rely on the portable C implementations for now.
 
 ---
@@ -65,31 +65,43 @@ This library supports all algorithms from upstream `liboqs`, with the addition o
 
 This guide follows the verified installation steps for **macOS Apple Silicon (arm64)**.
 
-**1. Install Dependencies**
-```bash
-brew install cmake ninja openssl@3 git bc
+1.  **Install Dependencies**
+    ```bash
+    brew install cmake ninja openssl@3 git bc
+    ```
 
+2.  **Clone Repository**
+    ```bash
+    # Clone with recursive to get all submodules
+    git clone --recursive [https://github.com/minjoo97/liboqs_KpqC.git](https://github.com/minjoo97/liboqs_KpqC.git)
+    cd liboqs_KpqC
+    ```
 
-**2. Install Dependencies**
-# Clone with recursive to get all submodules
-git clone --recursive [https://github.com/minjoo97/liboqs_KpqC.git](https://github.com/minjoo97/liboqs_KpqC.git)
-cd liboqs_KpqC
+3.  **Configure Build (CMake)**
+    This configuration installs the library to `/usr/local` and explicitly targets arm64 architecture.
+    ```bash
+    cmake -GNinja \
+      -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DCMAKE_OSX_ARCHITECTURES=arm64 \
+      -S . -B build
+    ```
 
-**3. Configure Build (CMake) This configuration installs the library to /usr/local and explicitly targets arm64 architecture.
-cmake -GNinja \
-  -DCMAKE_INSTALL_PREFIX=/usr/local \
-  -DCMAKE_OSX_ARCHITECTURES=arm64 \
-  -S . -B build
+4.  **Build and Install**
+    ```bash
+    cmake --build build
+    sudo cmake --install build
+    ```
 
-**4. Build and Install
-cmake --build build
-sudo cmake --install build
+---
 
+## 📜 License
 
-📜 License
-This project is licensed under the MIT License. See the LICENSE.txt file for details. The upstream liboqs project is also licensed under MIT. Please check the licenses of any third-party components included.
+This project is licensed under the MIT License. See the `LICENSE.txt` file for details. The upstream liboqs project is also licensed under MIT. Please check the licenses of any third-party components included.
 
-🙏 Acknowledgements
-This project is a fork of the Open Quantum Safe (OQS) project’s liboqs. We thank all OQS contributors for their foundational work.
+---
 
-The OQS project is supported by the Post-Quantum Cryptography Alliance (PQCA) under the Linux Foundation
+## 🙏 Acknowledgements
+
+This project is a fork of the Open Quantum Safe (OQS) project's liboqs. We thank all OQS contributors for their foundational work.
+
+The OQS project is supported by the Post-Quantum Cryptography Alliance (PQCA) under the Linux Foundation.
